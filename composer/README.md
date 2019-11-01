@@ -3,7 +3,7 @@
 ```
 mkdir ~/development/
 cd ~/development/
-git clone https://github.com/gustavoantao/ambiente_dev_php-fpm_nginx.git containers
+git clone https://github.com/gustavoantao/lightweight_php_dev_environment.git containers
 cd containers/composer
 sudo vi /etc/hosts
 ```
@@ -19,4 +19,5 @@ This will setup the 2 example apps. To run more apps just put it in `wwwdata` fo
 
 Try it:
 [App1](http://app1.dev.local)
+
 [App2](http://app2.dev.local)

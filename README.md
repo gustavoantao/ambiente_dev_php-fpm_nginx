@@ -14,6 +14,6 @@ The php image used is available with a bunch of php-extensions enabled out of th
 
 # How to use
 
-Read the doc at `composer` folder. But is basically enter the composer directory and run a docker-compose up command.
+Read the doc at `composer` folder. But is basically enter the composer directory and run a `docker-compose up` command.
 
 Enjoy!!
