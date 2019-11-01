@@ -1,0 +1,31 @@
+version: "2"
+services:
+  nginx: 
+    image: nginx:1.17-alpine # Offcial Nginx-alpine image
+    expose: 
+      - "80"
+    volumes: 
+      - "./config:/etc/nginx/conf.d" # Folder with vhosts for the apps
+      - "./wwwdata:/var/www/html" # Folder for your projects
+    networks:
+      dev_network:
+        ipv4_address: "172.16.222.2"  
+  php:
+    #image: your_local_registry/php7.3-alpine:latest       
+    #image: another-php-fpm-image       
+    image: gustavoantao/php7.3-alpine:latest       
+    expose:
+    - "9000"
+    volumes:       
+      - "./wwwdata:/var/www/html" # Shared with Nginx container
+    networks:
+      dev_network:
+        ipv4_address: "172.16.222.3"  
+networks:
+  dev_network:
+    driver: "bridge"
+    ipam:
+      driver: "default"
+      config:
+      - 
+        subnet: "172.16.222.0/24"
